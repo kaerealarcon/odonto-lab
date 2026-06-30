@@ -1,4 +1,5 @@
 import { useTranslation } from 'react-i18next'
+import { withBase } from '@/lib/utils'
 import type { BeforeAfterCase } from '@/types'
 
 interface BaseBeforeAfterCase {
@@ -44,6 +45,8 @@ export function useBeforeAfterCases(): BeforeAfterCase[] {
   const { t } = useTranslation()
   return baseBeforeAfterCases.map((base) => ({
     ...base,
+    before: withBase(base.before),
+    after: withBase(base.after),
     treatment: t(`treatments.items.${base.treatmentSlug}.name`),
     description: t(`beforeAfter.items.${base.id}.description`),
   }))

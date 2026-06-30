@@ -1,4 +1,5 @@
 import { useTranslation } from 'react-i18next'
+import { withBase } from '@/lib/utils'
 import type { TeamMember } from '@/types'
 
 interface BaseTeamMember {
@@ -44,6 +45,7 @@ export function useTeam(): TeamMember[] {
   const { t } = useTranslation()
   return baseTeam.map((base) => ({
     ...base,
+    photo: withBase(base.photo),
     role: t(`team.${base.id}.role`),
     bio: t(`team.${base.id}.bio`),
   }))

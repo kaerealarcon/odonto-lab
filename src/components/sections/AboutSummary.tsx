@@ -4,6 +4,7 @@ import { BadgeCheck } from 'lucide-react'
 import { Container } from '@/components/ui/Container'
 import { buttonVariants } from '@/components/ui/Button'
 import { clinicInfo } from '@/data/clinicInfo'
+import { withBase } from '@/lib/utils'
 
 export function AboutSummary() {
   const { t } = useTranslation()
@@ -12,7 +13,7 @@ export function AboutSummary() {
     <section className="bg-ink-50 py-16 sm:py-20">
       <Container className="grid items-center gap-12 lg:grid-cols-2">
         <img
-          src="/images/clinic/sobre.jpg"
+          src={withBase('/images/clinic/sobre.jpg')}
           alt={`${clinicInfo.responsibleDentist.name}, Odonto Lab`}
           className="mx-auto aspect-square w-64 rounded-3xl object-cover shadow-lg shadow-ink-900/10 sm:w-80"
           loading="lazy"

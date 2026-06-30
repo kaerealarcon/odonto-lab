@@ -1,4 +1,5 @@
 import { useTranslation } from 'react-i18next'
+import { withBase } from '@/lib/utils'
 import type { BlogPost } from '@/types'
 
 interface BaseBlogPost {
@@ -41,6 +42,7 @@ export function useBlogPosts(): BlogPost[] {
   const { t } = useTranslation()
   return baseBlogPosts.map((base) => ({
     ...base,
+    coverImage: withBase(base.coverImage),
     title: t(`blog.posts.${base.slug}.title`),
     excerpt: t(`blog.posts.${base.slug}.excerpt`),
     content: t(`blog.posts.${base.slug}.content`, { returnObjects: true }) as string[],

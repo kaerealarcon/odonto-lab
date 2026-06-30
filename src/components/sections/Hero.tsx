@@ -5,6 +5,7 @@ import { Container } from '@/components/ui/Container'
 import { buttonVariants } from '@/components/ui/Button'
 import { FallbackImage } from '@/components/ui/FallbackImage'
 import { buildWhatsAppLink } from '@/lib/whatsapp'
+import { withBase } from '@/lib/utils'
 
 export function Hero() {
   const { t } = useTranslation()
@@ -38,7 +39,7 @@ export function Hero() {
 
         <div className="relative">
           <FallbackImage
-            src="/images/clinic/hero.jpg"
+            src={withBase('/images/clinic/hero.jpg')}
             fallbackSrc="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?q=80&w=1200&auto=format&fit=crop"
             alt="Odonto Lab"
             className="aspect-4/3 w-full rounded-3xl object-cover shadow-xl shadow-primary-900/10"

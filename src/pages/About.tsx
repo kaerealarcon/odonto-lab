@@ -9,18 +9,19 @@ import { TeamMemberCard } from '@/components/team/TeamMemberCard'
 import { useTeam } from '@/data/team'
 import { clinicInfo } from '@/data/clinicInfo'
 import { getDentistSchema, getBreadcrumbSchema } from '@/lib/schema'
+import { withBase } from '@/lib/utils'
 
 const structureImages = [
   {
-    src: '/images/clinic/estrutura-recepcao.jpg',
+    src: withBase('/images/clinic/estrutura-recepcao.jpg'),
     fallbackSrc: 'https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=900&auto=format&fit=crop',
   },
   {
-    src: '/images/clinic/estrutura-consultorio.jpg',
+    src: withBase('/images/clinic/estrutura-consultorio.jpg'),
     fallbackSrc: 'https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?q=80&w=900&auto=format&fit=crop',
   },
   {
-    src: '/images/clinic/estrutura-esterilizacao.jpg',
+    src: withBase('/images/clinic/estrutura-esterilizacao.jpg'),
     fallbackSrc: 'https://images.unsplash.com/photo-1609840114035-3c981b782dfe?q=80&w=900&auto=format&fit=crop',
   },
 ]

@@ -1,4 +1,5 @@
 import { useTranslation } from 'react-i18next'
+import { withBase } from '@/lib/utils'
 import type { Treatment, TreatmentCategorySlug, TreatmentStep } from '@/types'
 
 interface BaseTreatment {
@@ -86,6 +87,7 @@ export function useTreatments(): Treatment[] {
   const { t } = useTranslation()
   return baseTreatments.map((base) => ({
     ...base,
+    image: withBase(base.image),
     name: t(`treatments.items.${base.slug}.name`),
     shortDescription: t(`treatments.items.${base.slug}.shortDescription`),
     description: t(`treatments.items.${base.slug}.description`),

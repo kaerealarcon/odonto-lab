@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
+import { withBase } from '@/lib/utils'
 
 export function Logo() {
   const [logoFailed, setLogoFailed] = useState(false)
@@ -12,7 +13,7 @@ export function Logo() {
         </span>
       ) : (
         <img
-          src="/images/logo/logo.svg"
+          src={withBase('/images/logo/logo.svg')}
           alt="Odonto Lab"
           className="h-9 w-9 object-contain"
           onError={() => setLogoFailed(true)}
